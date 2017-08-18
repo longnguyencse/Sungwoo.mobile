@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Sungwoo.mobile</string>
+    <string name="title_activity_samwoo">SamwooAPS</string>
+    <string name="dialog_option_ok">Ok</string>
+    <string name="dialog_option_cancel">Cancel</string>
+</resources>
