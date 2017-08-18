@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
+import com.sungwoo.aps.mobile.injection.ApplicationContext;
+import com.sungwoo.aps.mobile.injection.module.ApplicationModule;
 import com.sungwoo.aps.mobile.ui.activity.BaseActivity;
 
 import javax.inject.Singleton;
@@ -18,20 +20,21 @@ import retrofit2.Retrofit;
  */
 
 @Singleton
-@Component(modules = {ApplicationModule.class, NetModule.class, DataModule.class})
+@Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
-    void inject(BaseActivity baseActivity);
-    Context context();
+    @ApplicationContext Context context();
+//    void inject(BaseActivity baseActivity);
+//    Context context();
 
-    Retrofit retrofit();
+//    Retrofit retrofit();
 
-    Gson gson();
+//    Gson gson();
 
-    OkHttpClient okHttpClient();
+//    OkHttpClient okHttpClient();
 
-    Realm realm();
+//    Realm realm();
 
-    SharedPreferences sharePref();
+//    SharedPreferences sharePref();
 
-    SharedPreferences.Editor editor();
+//    SharedPreferences.Editor editor();
 }

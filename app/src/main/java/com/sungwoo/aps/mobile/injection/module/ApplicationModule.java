@@ -4,13 +4,13 @@ import android.app.Application;
 import android.content.Context;
 
 import com.sungwoo.aps.mobile.data.remote.SungwooService;
+import com.sungwoo.aps.mobile.injection.ApplicationContext;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import uk.co.ribot.androidboilerplate.data.remote.RibotsService;
-import uk.co.ribot.androidboilerplate.injection.ApplicationContext;
+
 
 /**
  * Provide application-level dependencies.

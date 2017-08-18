@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.facebook.stetho.*;
 import com.squareup.leakcanary.LeakCanary;
+import com.sungwoo.aps.mobile.injection.compoment.ApplicationComponent;
+import com.sungwoo.aps.mobile.injection.compoment.DaggerApplicationComponent;
+import com.sungwoo.aps.mobile.injection.module.ApplicationModule;
 
 import io.realm.Realm;
 
@@ -14,6 +17,7 @@ import io.realm.Realm;
 
 public class SungwooApplication extends Application {
     private static SungwooApplication sSumSungwooApplication;
+    private ApplicationComponent mApplicationComponent;
 
     private SungwooApplication() {
     }
@@ -63,5 +67,14 @@ public class SungwooApplication extends Application {
             return;
         }
         Stetho.initializeWithDefaults(this);
+    }
+
+    public ApplicationComponent getComponent() {
+        if (mApplicationComponent == null) {
+            mApplicationComponent = DaggerApplicationComponent.builder()
+                    .applicationModule(new ApplicationModule(this))
+                    .build();
+        }
+        return mApplicationComponent;
     }
 }

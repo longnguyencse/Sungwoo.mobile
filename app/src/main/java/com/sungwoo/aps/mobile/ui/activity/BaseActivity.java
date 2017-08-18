@@ -19,6 +19,7 @@ import com.sungwoo.aps.mobile.R;
 import com.sungwoo.aps.mobile.SungwooApplication;
 import com.sungwoo.aps.mobile.injection.compoment.ApplicationComponent;
 import com.sungwoo.aps.mobile.injection.compoment.SungwooCompoment;
+import com.sungwoo.aps.mobile.injection.module.ActivityModule;
 
 import javax.inject.Inject;
 
@@ -71,12 +72,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getApplicationComponent().inject(this);
+//        this.getApplicationComponent().inject(this);
     }
 
-    protected ApplicationComponent getApplicationComponent() {
-        return ((SungwooApplication) getApplication()).getApplicationComponent();
-    }
+//    protected ApplicationComponent getApplicationComponent() {
+//        return ((SungwooApplication) getApplication()).getApplicationComponent();
+//    }
 
     protected ActivityModule getActivityModule() {
         return new ActivityModule(this);
@@ -117,14 +118,14 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .show();
     }
 
-    protected void initializeComponent() {
-        this.mSungwooCompoment = SungwooCompoment.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(getActivityModule())
-                .quarkModule(new QuarkModule())
-                .daggerModule(new DaggerModule())
-                .build();
-    }
+//    protected void initializeComponent() {
+//        this.mSungwooCompoment = SungwooCompoment.builder()
+//                .applicationComponent(getApplicationComponent())
+//                .activityModule(getActivityModule())
+//                .quarkModule(new QuarkModule())
+//                .daggerModule(new DaggerModule())
+//                .build();
+//    }
 
     @Override
     protected void onDestroy() {
