@@ -25,18 +25,4 @@ import retrofit2.Retrofit;
 public interface ApplicationComponent {
     void inject(SungwooApplication sungwooApplication);
     @ApplicationContext Context context();
-//    void inject(BaseActivity baseActivity);
-//    Context context();
-
-//    Retrofit retrofit();
-
-//    Gson gson();
-
-//    OkHttpClient okHttpClient();
-
-//    Realm realm();
-
-//    SharedPreferences sharePref();
-
-//    SharedPreferences.Editor editor();
 }
