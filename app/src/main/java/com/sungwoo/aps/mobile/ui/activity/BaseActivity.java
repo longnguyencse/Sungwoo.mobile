@@ -16,8 +16,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.sungwoo.aps.mobile.R;
-import com.sungwoo.aps.mobile.SungwooApplication;
-import com.sungwoo.aps.mobile.injection.compoment.ApplicationComponent;
 import com.sungwoo.aps.mobile.injection.compoment.SungwooCompoment;
 import com.sungwoo.aps.mobile.injection.module.ActivityModule;
 

@@ -1,6 +1,7 @@
 package com.sungwoo.aps.mobile;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.facebook.stetho.*;
 import com.squareup.leakcanary.LeakCanary;
@@ -19,7 +20,7 @@ public class SungwooApplication extends Application {
     private static SungwooApplication sSumSungwooApplication;
     private ApplicationComponent mApplicationComponent;
 
-    private SungwooApplication() {
+    public SungwooApplication() {
     }
 
     @Override
@@ -36,6 +37,11 @@ public class SungwooApplication extends Application {
         initRealmDb();
         // init release library
         initReleaseLibrary();
+        mApplicationComponent = DaggerApplicationComponent
+                .builder()
+                .applicationModule(new ApplicationModule(this))
+                .build();
+        mApplicationComponent.inject(this);
     }
 
     private SungwooApplication initSingletonApp() {
@@ -71,10 +77,15 @@ public class SungwooApplication extends Application {
 
     public ApplicationComponent getComponent() {
         if (mApplicationComponent == null) {
-            mApplicationComponent = DaggerApplicationComponent.builder()
+            mApplicationComponent = DaggerApplicationComponent
+                    .builder()
                     .applicationModule(new ApplicationModule(this))
                     .build();
         }
         return mApplicationComponent;
+    }
+
+    public static SungwooApplication get(Context context) {
+        return (SungwooApplication) context.getApplicationContext();
     }
 }

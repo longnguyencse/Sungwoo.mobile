@@ -79,41 +79,38 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
     compile "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
     compile "com.squareup.retrofit2:adapter-rxjava:$RETROFIT_VERSION"
-//    // dragger 2
+    // dragger 2
     compile "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
     compile "com.google.dagger:dagger:$DAGGER_VERSION"
-//    compile "com.google.dagger:dagger-android:$DAGGER_VERSION"
-//    compile "com.google.dagger:dagger-android-support:$DAGGER_VERSION" // if you use the support libraries
-//    annotationProcessor "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
-//    provided 'org.glassfish:javax.annotation:10.0-b28' //Required by Dagger2
-//    def daggerCompiler = "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
-//    annotationProcessor daggerCompiler
-//    // butter knide
+
+    // butter knide
     compile "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
-//    // google gson
+    // google gson
     compile "com.google.code.gson:gson:$GSON_VERSION"
-//    // rxjava, rx android
+    // rxjava, rx android
     compile "io.reactivex.rxjava2:rxjava:$RX_JAVA_VERSION"
     compile "io.reactivex.rxjava2:rxandroid:$RX_ANDROID_VERSION"
-//
-////    compile "javax.annotation:jsr250-api:$JAVAX_ANOTATION_VERSION"
-////    compile "javax.inject:javax.inject:$JAVAX_InJECT_VERSION"
-//
-//    // stetho
+    compile "javax.inject:javax.inject:$JAVAX_INJECT_VERSION"
+    compile "javax.annotation:jsr250-api:$JAVAX_ANOTATION_VERSION"
+
+
+    // stetho
     compile "com.facebook.stetho:stetho:$STETHO_VERSION"
-//    // glide
+
+    // glide
 //    compile "com.github.bumptech.glide:glide:$GLIDE_VERSION"
 //    annotationProcessor "com.github.bumptech.glide:compiler:$GLIDE_VERSION"
+
     // picasso
     compile "com.squareup.picasso:picasso:$PICASSO_VERSION"
-//    // Logger
+    // Logger
     compile "com.orhanobut:logger:$LOGGER_VERSION"
-//
-//    // leak canary
+
+    // leak canary
     debugCompile "com.squareup.leakcanary:leakcanary-android:$LEAK_MEMORY"
     releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$LEAK_MEMORY"
-//
-//    // parcel
+
+    // parcel
     compile "org.parceler:parceler-api:$PARCELER_VERSION"
     annotationProcessor "org.parceler:parceler:$PARCELER_VERSION"
 }
