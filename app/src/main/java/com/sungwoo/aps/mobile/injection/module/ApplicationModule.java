@@ -1,13 +1,8 @@
 package com.sungwoo.aps.mobile.injection.module;
 
-import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 
 import com.sungwoo.aps.mobile.SungwooApplication;
-import com.sungwoo.aps.mobile.data.remote.SungwooService;
-import com.sungwoo.aps.mobile.injection.ActivityContext;
-import com.sungwoo.aps.mobile.injection.ApplicationContext;
 
 import javax.inject.Singleton;
 
