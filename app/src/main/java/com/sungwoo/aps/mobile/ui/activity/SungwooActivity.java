@@ -3,14 +3,13 @@ package com.sungwoo.aps.mobile.ui.activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.sungwoo.aps.mobile.R;
 import com.sungwoo.aps.mobile.data.model.ParkingPoint;
-import com.sungwoo.aps.mobile.data.remote.SungwooService;
+import com.sungwoo.aps.mobile.presenter.SungwooPresenter;
 import com.sungwoo.aps.mobile.ui.adapter.ParkAdapter;
 import com.sungwoo.aps.mobile.ui.mvpview.SungwooMvpView;
 
@@ -24,8 +23,9 @@ import butterknife.ButterKnife;
 public class SungwooActivity extends BaseActivity implements SungwooMvpView {
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
+
     @Inject
-    SungwooService mSungwooService;
+    SungwooPresenter mSungwooPresenter;
 
     @BindView(R.id.my_recycler_view)
     RecyclerView mRecyclerView;

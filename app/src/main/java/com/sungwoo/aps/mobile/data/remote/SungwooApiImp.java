@@ -20,4 +20,9 @@ public class SungwooApiImp implements SungwooApi {
     public SungwooApiImp(SungwooService service) {
         this.service = service;
     }
+
+    @Override
+    public Observable<ParkingPoint> getParkingLotData(String location) {
+        return service.getParkingLotData(location);
+    }
 }
