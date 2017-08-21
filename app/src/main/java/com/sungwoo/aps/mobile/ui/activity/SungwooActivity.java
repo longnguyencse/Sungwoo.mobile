@@ -9,15 +9,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.sungwoo.aps.mobile.R;
+import com.sungwoo.aps.mobile.data.model.ParkingPoint;
 import com.sungwoo.aps.mobile.data.remote.SungwooService;
 import com.sungwoo.aps.mobile.ui.adapter.ParkAdapter;
+import com.sungwoo.aps.mobile.ui.mvpview.SungwooMvpView;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SungwooActivity extends BaseActivity {
+public class SungwooActivity extends BaseActivity implements SungwooMvpView {
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
     @Inject
@@ -58,4 +62,8 @@ public class SungwooActivity extends BaseActivity {
         });
     }
 
+    @Override
+    public void showParkingLot(List<ParkingPoint> parkingPoints) {
+
+    }
 }
