@@ -19,12 +19,12 @@ public interface SungwooService {
     String ENDPOINT = "https://api.ikorn.vn/";
 
     @GET("pakingSlot")
-    Observable<ParkingPoint> getRibots();
+    Observable<ParkingPoint> getParkingLotData(String location);
 
     /******** Helper class that sets up a new services *******/
     class Creator {
 
-        public static SungwooService newRibotsService() {
+        public static SungwooService newSungwooService() {
             Gson gson = new GsonBuilder()
                     .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
                     .create();

@@ -28,6 +28,8 @@ public class SungwooApplication extends Application {
         super.onCreate();
         // singleton
         initSingletonApp();
+        // initialize injection
+        initializeInjection();
 
         // Leak canary
         initLeakCanary();
@@ -37,11 +39,7 @@ public class SungwooApplication extends Application {
         initRealmDb();
         // init release library
         initReleaseLibrary();
-        mApplicationComponent = DaggerApplicationComponent
-                .builder()
-                .applicationModule(new ApplicationModule(this))
-                .build();
-        mApplicationComponent.inject(this);
+
     }
 
     private SungwooApplication initSingletonApp() {
@@ -49,6 +47,14 @@ public class SungwooApplication extends Application {
             sSumSungwooApplication = this;
         }
         return sSumSungwooApplication;
+    }
+
+    private void initializeInjection(){
+        mApplicationComponent = DaggerApplicationComponent
+                .builder()
+                .applicationModule(new ApplicationModule(this))
+                .build();
+//        mApplicationComponent.inject(this);
     }
 
     private void initLeakCanary() {

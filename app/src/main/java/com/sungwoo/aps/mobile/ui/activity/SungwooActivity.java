@@ -9,14 +9,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.sungwoo.aps.mobile.R;
+import com.sungwoo.aps.mobile.data.remote.SungwooService;
 import com.sungwoo.aps.mobile.ui.adapter.ParkAdapter;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SamwooActivity extends AppCompatActivity {
+public class SungwooActivity extends BaseActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
+    @Inject
+    SungwooService mSungwooService;
 
     @BindView(R.id.my_recycler_view)
     RecyclerView mRecyclerView;
@@ -29,6 +34,8 @@ public class SamwooActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_samwoo);
         ButterKnife.bind(this);
+        // initialize component
+        initializeComponent();
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView

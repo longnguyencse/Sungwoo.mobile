@@ -16,26 +16,26 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.sungwoo.aps.mobile.R;
-import com.sungwoo.aps.mobile.injection.compoment.SungwooCompoment;
+import com.sungwoo.aps.mobile.SungwooApplication;
+import com.sungwoo.aps.mobile.injection.compoment.ApplicationComponent;
+import com.sungwoo.aps.mobile.injection.compoment.DaggerSungwooComponent;
+import com.sungwoo.aps.mobile.injection.compoment.SungwooComponent;
 import com.sungwoo.aps.mobile.injection.module.ActivityModule;
 
 import javax.inject.Inject;
 
 import butterknife.Unbinder;
 
-/**
- * Created by localadmin on 11/22/2016.
- */
-
 public abstract class BaseActivity extends AppCompatActivity {
-    protected SungwooCompoment mSungwooCompoment;
+    protected SungwooComponent mSungwooComponent;
+
     Unbinder unbinder;
 
-    @Inject
-    SharedPreferences sharedPref;
-
-    @Inject
-    SharedPreferences.Editor editor;
+//    @Inject
+//    SharedPreferences sharedPref;
+//
+//    @Inject
+//    SharedPreferences.Editor editor;
 
     public static void start(Context context, Class<?> cls, Bundle bundle) {
         Intent intent = new Intent(context, cls);
@@ -70,12 +70,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        this.getApplicationComponent().inject(this);
+        this.getApplicationComponent().inject(this);
     }
 
-//    protected ApplicationComponent getApplicationComponent() {
-//        return ((SungwooApplication) getApplication()).getApplicationComponent();
-//    }
+    protected ApplicationComponent getApplicationComponent() {
+        return ((SungwooApplication) getApplication()).getComponent();
+    }
 
     protected ActivityModule getActivityModule() {
         return new ActivityModule(this);
@@ -116,14 +116,12 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .show();
     }
 
-//    protected void initializeComponent() {
-//        this.mSungwooCompoment = SungwooCompoment.builder()
-//                .applicationComponent(getApplicationComponent())
-//                .activityModule(getActivityModule())
-//                .quarkModule(new QuarkModule())
-//                .daggerModule(new DaggerModule())
-//                .build();
-//    }
+    protected void initializeComponent() {
+        this.mSungwooComponent = DaggerSungwooComponent.builder()
+                .applicationComponent(getApplicationComponent())
+                .activityModule(getActivityModule())
+                .build();
+    }
 
     @Override
     protected void onDestroy() {

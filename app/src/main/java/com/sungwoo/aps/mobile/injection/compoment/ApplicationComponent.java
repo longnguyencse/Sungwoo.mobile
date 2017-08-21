@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.sungwoo.aps.mobile.SungwooApplication;
+import com.sungwoo.aps.mobile.data.remote.SungwooService;
 import com.sungwoo.aps.mobile.injection.ApplicationContext;
 import com.sungwoo.aps.mobile.injection.module.ApplicationModule;
 import com.sungwoo.aps.mobile.ui.activity.BaseActivity;
@@ -23,6 +24,7 @@ import retrofit2.Retrofit;
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
-    void inject(SungwooApplication sungwooApplication);
+    void inject(BaseActivity baseActivity);
     @ApplicationContext Context context();
+    SungwooService sungwooService();
 }

@@ -36,8 +36,8 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    SungwooService provideRibotsService() {
-        return SungwooService.Creator.newRibotsService();
+    SungwooService provideSungwooService() {
+        return SungwooService.Creator.newSungwooService();
     }
 
 }

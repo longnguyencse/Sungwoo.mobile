@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.activity.SamwooActivity"
+            android:name=".ui.activity.SungwooActivity"
             android:label="@string/title_activity_samwoo"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
