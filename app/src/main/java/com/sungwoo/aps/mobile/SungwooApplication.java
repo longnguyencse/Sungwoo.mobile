@@ -3,11 +3,13 @@ package com.sungwoo.aps.mobile;
 import android.app.Application;
 import android.content.Context;
 
-import com.facebook.stetho.*;
+import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
-import com.sungwoo.aps.mobile.injection.compoment.ApplicationComponent;
-import com.sungwoo.aps.mobile.injection.compoment.DaggerApplicationComponent;
+import com.sungwoo.aps.mobile.injection.compoment.DaggerSungwooComponent;
+import com.sungwoo.aps.mobile.injection.compoment.SungwooComponent;
 import com.sungwoo.aps.mobile.injection.module.ApplicationModule;
+import com.sungwoo.aps.mobile.injection.module.NetworkModule;
+import com.sungwoo.aps.mobile.injection.module.SungwooModule;
 
 import io.realm.Realm;
 
@@ -18,7 +20,9 @@ import io.realm.Realm;
 
 public class SungwooApplication extends Application {
     private static SungwooApplication sSumSungwooApplication;
-    private ApplicationComponent mApplicationComponent;
+    public static SungwooComponent mApplicationComponent;
+//    private ApplicationComponent mApplicationComponent;
+
 
     public SungwooApplication() {
     }
@@ -50,11 +54,12 @@ public class SungwooApplication extends Application {
     }
 
     private void initializeInjection(){
-        mApplicationComponent = DaggerApplicationComponent
+        mApplicationComponent = DaggerSungwooComponent
                 .builder()
+                .sungwooModule(new SungwooModule())
+                .networkModule(new NetworkModule())
                 .applicationModule(new ApplicationModule(this))
                 .build();
-//        mApplicationComponent.inject(this);
     }
 
     private void initLeakCanary() {
@@ -81,15 +86,15 @@ public class SungwooApplication extends Application {
         Stetho.initializeWithDefaults(this);
     }
 
-    public ApplicationComponent getComponent() {
-        if (mApplicationComponent == null) {
-            mApplicationComponent = DaggerApplicationComponent
-                    .builder()
-                    .applicationModule(new ApplicationModule(this))
-                    .build();
-        }
-        return mApplicationComponent;
-    }
+//    public ApplicationComponent getComponent() {
+//        if (mApplicationComponent == null) {
+//            mApplicationComponent = DaggerApplicationComponent
+//                    .builder()
+//                    .applicationModule(new ApplicationModule(this))
+//                    .build();
+//        }
+//        return mApplicationComponent;
+//    }
 
     public static SungwooApplication get(Context context) {
         return (SungwooApplication) context.getApplicationContext();

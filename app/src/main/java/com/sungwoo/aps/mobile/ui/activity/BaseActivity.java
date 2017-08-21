@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
@@ -17,12 +16,9 @@ import android.widget.Toast;
 
 import com.sungwoo.aps.mobile.R;
 import com.sungwoo.aps.mobile.SungwooApplication;
-import com.sungwoo.aps.mobile.injection.compoment.ApplicationComponent;
 import com.sungwoo.aps.mobile.injection.compoment.DaggerSungwooComponent;
 import com.sungwoo.aps.mobile.injection.compoment.SungwooComponent;
-import com.sungwoo.aps.mobile.injection.module.ActivityModule;
-
-import javax.inject.Inject;
+import com.sungwoo.aps.mobile.injection.module.NetworkModule;
 
 import butterknife.Unbinder;
 
@@ -70,15 +66,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getApplicationComponent().inject(this);
+
     }
 
-    protected ApplicationComponent getApplicationComponent() {
-        return ((SungwooApplication) getApplication()).getComponent();
-    }
+//    protected ApplicationComponent getApplicationComponent() {
+//        return ((SungwooApplication) getApplication()).getComponent();
+//    }
 
-    protected ActivityModule getActivityModule() {
-        return new ActivityModule(this);
+    protected NetworkModule getActivityModule() {
+        return new NetworkModule();
     }
 
     protected void showToast(Activity activity, String msg) {
@@ -117,10 +113,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void initializeComponent() {
-        this.mSungwooComponent = DaggerSungwooComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(getActivityModule())
-                .build();
+//        this.mSungwooComponent = DaggerSungwooComponent.builder()
+//                .applicationComponent(getApplicationComponent())
+//                .activityModule(getActivityModule())
+//                .build();
     }
 
     @Override

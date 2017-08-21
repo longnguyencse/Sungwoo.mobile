@@ -3,4 +3,8 @@
     <string name="title_activity_samwoo">SamwooAPS</string>
     <string name="dialog_option_ok">Ok</string>
     <string name="dialog_option_cancel">Cancel</string>
+    <string name="partial_parking_slot_identification">Slot ID: </string>
+    <string name="partial_parking_slot_charge">Charge: 2$</string>
+    <string name="partial_parking_status">Status</string>
+    <string name="partial_parking_booking_action">Go Parking</string>
 </resources>

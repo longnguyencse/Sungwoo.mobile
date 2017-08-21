@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="park_color">#4f4448</color>
+    <color name="park_color_avaible">#adf442</color>
+    <color name="park_color_full">#991032</color>
+    <color name="park_color_booking">#c0c900</color>
 </resources>

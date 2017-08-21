@@ -1,9 +1,12 @@
 package com.sungwoo.aps.mobile.injection.module;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
+import com.sungwoo.aps.mobile.SungwooApplication;
 import com.sungwoo.aps.mobile.data.remote.SungwooService;
+import com.sungwoo.aps.mobile.injection.ActivityContext;
 import com.sungwoo.aps.mobile.injection.ApplicationContext;
 
 import javax.inject.Singleton;
@@ -17,27 +20,21 @@ import dagger.Provides;
  */
 @Module
 public class ApplicationModule {
-    protected final Application mApplication;
+    protected final SungwooApplication mApplication;
 
-    public ApplicationModule(Application application) {
+    public ApplicationModule(SungwooApplication application) {
         mApplication = application;
     }
 
     @Provides
-    Application provideApplication() {
-        return mApplication;
-    }
-
-    @Provides
-    @ApplicationContext
-    Context provideContext() {
+    SungwooApplication provideApplication() {
         return mApplication;
     }
 
     @Provides
     @Singleton
-    SungwooService provideSungwooService() {
-        return SungwooService.Creator.newSungwooService();
+    Context provideContext() {
+        return mApplication;
     }
 
 }

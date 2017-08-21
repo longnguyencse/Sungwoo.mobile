@@ -12,12 +12,44 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        card_view:cardBackgroundColor="@color/cardview_dark_background"
+        card_view:cardBackgroundColor="@color/park_color_avaible"
         card_view:cardCornerRadius="10dp">
 
-        <TextView
-            android:id="@+id/info_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/partial_parking_slot_identification" />
+
+            <TextView
+                android:id="@+id/partial_paking_idenfitier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/info_text"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/partial_aparking_charge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/info_text"
+                android:text="@string/partial_parking_slot_charge" />
+
+            <Button
+                android:id="@+id/partial_paking_book_slot"
+                android:textAllCaps="false"
+                android:background="@color/park_color_booking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:text="@string/partial_parking_booking_action" />
+        </RelativeLayout>
+
     </android.support.v7.widget.CardView>
 </LinearLayout>
