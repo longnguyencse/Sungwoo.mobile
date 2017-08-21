@@ -38,8 +38,6 @@ public class SungwooActivity extends BaseActivity implements SungwooMvpView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_samwoo);
         ButterKnife.bind(this);
-        // initialize component
-        initializeComponent();
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView

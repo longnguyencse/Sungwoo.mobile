@@ -69,9 +69,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-//    protected ApplicationComponent getApplicationComponent() {
-//        return ((SungwooApplication) getApplication()).getComponent();
-//    }
 
     protected NetworkModule getActivityModule() {
         return new NetworkModule();
@@ -112,12 +109,6 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .show();
     }
 
-    protected void initializeComponent() {
-//        this.mSungwooComponent = DaggerSungwooComponent.builder()
-//                .applicationComponent(getApplicationComponent())
-//                .activityModule(getActivityModule())
-//                .build();
-    }
 
     @Override
     protected void onDestroy() {
