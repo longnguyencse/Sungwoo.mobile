@@ -100,7 +100,7 @@ public class NetworkModule {
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl("")
+                .baseUrl("https://api.ikorn.vn/")
                 .client(okHttpClient)
                 .build();
         return retrofit;

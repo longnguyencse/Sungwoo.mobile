@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.sungwoo.aps.mobile.R;
+import com.sungwoo.aps.mobile.SungwooApplication;
 import com.sungwoo.aps.mobile.data.model.ParkingPoint;
 import com.sungwoo.aps.mobile.presenter.SungwooPresenter;
 import com.sungwoo.aps.mobile.ui.adapter.ParkAdapter;
@@ -38,6 +39,9 @@ public class SungwooActivity extends BaseActivity implements SungwooMvpView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_samwoo);
         ButterKnife.bind(this);
+        SungwooApplication.mApplicationComponent.inject(this);
+
+        mSungwooPresenter.setView(this);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
