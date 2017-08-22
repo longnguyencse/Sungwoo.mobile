@@ -62,6 +62,7 @@ public class SungwooActivity extends BaseActivity implements SungwooMvpView {
                         .setAction("Action", null).show();
             }
         });
+        mSungwooPresenter.getParkingLot("uid");
     }
 
     @Override

@@ -21,8 +21,6 @@ import io.realm.Realm;
 public class SungwooApplication extends Application {
     private static SungwooApplication sSumSungwooApplication;
     public static SungwooComponent mApplicationComponent;
-//    private ApplicationComponent mApplicationComponent;
-
 
     public SungwooApplication() {
     }
@@ -85,16 +83,6 @@ public class SungwooApplication extends Application {
         }
         Stetho.initializeWithDefaults(this);
     }
-
-//    public ApplicationComponent getComponent() {
-//        if (mApplicationComponent == null) {
-//            mApplicationComponent = DaggerApplicationComponent
-//                    .builder()
-//                    .applicationModule(new ApplicationModule(this))
-//                    .build();
-//        }
-//        return mApplicationComponent;
-//    }
 
     public static SungwooApplication get(Context context) {
         return (SungwooApplication) context.getApplicationContext();

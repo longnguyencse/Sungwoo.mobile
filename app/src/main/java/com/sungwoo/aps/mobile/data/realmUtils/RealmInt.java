@@ -1,4 +1,4 @@
-package com.sungwoo.aps.mobile.data.realm;
+package com.sungwoo.aps.mobile.data.realmUtils;
 
 import org.parceler.Parcel;
 

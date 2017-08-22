@@ -1,6 +1,5 @@
 package com.sungwoo.aps.mobile.injection.module;
 
-import android.app.Activity;
 import android.content.Context;
 
 import com.google.gson.FieldNamingPolicy;
@@ -9,8 +8,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.sungwoo.aps.mobile.BuildConfig;
 import com.sungwoo.aps.mobile.SungwooApplication;
-import com.sungwoo.aps.mobile.data.realm.RealmInt;
-import com.sungwoo.aps.mobile.data.realm.RealmString;
+import com.sungwoo.aps.mobile.data.realmUtils.RealmInt;
+import com.sungwoo.aps.mobile.data.realmUtils.RealmString;
 import com.sungwoo.aps.mobile.data.remote.SungwooApi;
 import com.sungwoo.aps.mobile.data.remote.SungwooService;
 import com.sungwoo.aps.mobile.data.remote.SungwooApiImp;
@@ -20,7 +19,6 @@ import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.util.concurrent.TimeUnit;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
