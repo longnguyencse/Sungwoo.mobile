@@ -3,6 +3,7 @@ package com.sungwoo.aps.mobile.injection.compoment;
 import android.content.Context;
 
 import com.sungwoo.aps.mobile.SungwooApplication;
+import com.sungwoo.aps.mobile.common.utils.ToastUtil;
 import com.sungwoo.aps.mobile.data.remote.SungwooService;
 import com.sungwoo.aps.mobile.injection.module.ApplicationModule;
 import com.sungwoo.aps.mobile.injection.module.NetworkModule;
@@ -23,6 +24,7 @@ public interface SungwooComponent {
     SungwooApplication sungwooApplication();
     Context context();
     SungwooService sungwooService();
+    ToastUtil toastUtil();
 
     void inject(SungwooActivity activity);
 

@@ -48,7 +48,7 @@ dependencies {
     final PLAY_SERVICES_VERSION = '9.6.1'
     final SUPPORT_LIBRARY_VERSION = '25.3.1'
     final RETROFIT_VERSION = '2.3.0'
-    final DAGGER_VERSION = '2.5'
+    final DAGGER_VERSION = '2.11'
     final BUTTERKNIFE_VERSION = '8.8.1'
     final GSON_VERSION = '2.3'
     final RX_JAVA_VERSION = '2.1.2'
@@ -82,7 +82,7 @@ dependencies {
 //    compile "com.squareup.retrofit2:adapter-rxjava:$RETROFIT_VERSION"
 //    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
     // dragger 2
-    compile "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    annotationProcessor "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
     compile "com.google.dagger:dagger:$DAGGER_VERSION"
 
     // butter knide
@@ -94,7 +94,7 @@ dependencies {
     compile "io.reactivex.rxjava2:rxjava:$RX_JAVA_VERSION"
     compile "io.reactivex.rxjava2:rxandroid:$RX_ANDROID_VERSION"
     compile "javax.inject:javax.inject:$JAVAX_INJECT_VERSION"
-    compile "javax.annotation:jsr250-api:$JAVAX_ANOTATION_VERSION"
+//    compile "javax.annotation:jsr250-api:$JAVAX_ANOTATION_VERSION"
 
 
     // stetho

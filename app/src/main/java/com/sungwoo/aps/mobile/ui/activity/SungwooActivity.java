@@ -9,6 +9,8 @@ import android.view.View;
 
 import com.sungwoo.aps.mobile.R;
 import com.sungwoo.aps.mobile.SungwooApplication;
+import com.sungwoo.aps.mobile.common.utils.SharePrefsUtils;
+import com.sungwoo.aps.mobile.common.utils.ToastUtil;
 import com.sungwoo.aps.mobile.data.model.ParkingPoint;
 import com.sungwoo.aps.mobile.presenter.SungwooPresenter;
 import com.sungwoo.aps.mobile.ui.adapter.ParkAdapter;
@@ -27,6 +29,10 @@ public class SungwooActivity extends BaseActivity implements SungwooMvpView {
 
     @Inject
     SungwooPresenter mSungwooPresenter;
+    @Inject
+    ToastUtil mToastUtil;
+    @Inject
+    SharePrefsUtils sharePrefsUtils;
 
     @BindView(R.id.my_recycler_view)
     RecyclerView mRecyclerView;
@@ -63,6 +69,8 @@ public class SungwooActivity extends BaseActivity implements SungwooMvpView {
             }
         });
         mSungwooPresenter.getParkingLot("uid");
+        mToastUtil.showError("Toast Util show");
+        sharePrefsUtils.setStringPreference("api", "longace");
     }
 
     @Override

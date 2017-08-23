@@ -78,9 +78,9 @@ public class SungwooApplication extends Application {
     }
 
     private void initDebugLibrary() {
-        if (BuildConfig.DEBUG) {
-            return;
-        }
+//        if (BuildConfig.DEBUG) {
+//            return;
+//        }
         Stetho.initializeWithDefaults(this);
     }
 

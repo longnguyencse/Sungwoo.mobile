@@ -15,10 +15,10 @@
  */
 package com.sungwoo.aps.mobile.data.interactor;
 
-import com.google.common.base.Preconditions;
 import com.sungwoo.aps.mobile.data.executor.PostExecutionThread;
 import com.sungwoo.aps.mobile.data.executor.ThreadExecutor;
 
+import dagger.internal.Preconditions;
 import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
