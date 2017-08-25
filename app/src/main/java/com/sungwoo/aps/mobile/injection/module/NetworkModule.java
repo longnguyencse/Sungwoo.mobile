@@ -10,9 +10,7 @@ import com.sungwoo.aps.mobile.BuildConfig;
 import com.sungwoo.aps.mobile.SungwooApplication;
 import com.sungwoo.aps.mobile.data.realmUtils.RealmInt;
 import com.sungwoo.aps.mobile.data.realmUtils.RealmString;
-import com.sungwoo.aps.mobile.data.remote.SungwooApi;
 import com.sungwoo.aps.mobile.data.remote.SungwooService;
-import com.sungwoo.aps.mobile.data.remote.SungwooApiImp;
 
 import java.lang.reflect.Type;
 import java.net.CookieManager;
@@ -102,13 +100,6 @@ public class NetworkModule {
                 .client(okHttpClient)
                 .build();
         return retrofit;
-    }
-
-
-    @Provides
-    @Singleton
-    SungwooApi provideSungwooApi(SungwooApiImp api) {
-        return api;
     }
 
     @Provides

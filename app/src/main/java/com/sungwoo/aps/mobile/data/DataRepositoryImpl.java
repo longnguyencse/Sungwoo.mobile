@@ -1,7 +1,7 @@
 package com.sungwoo.aps.mobile.data;
 
 import com.sungwoo.aps.mobile.data.model.ParkingPoint;
-import com.sungwoo.aps.mobile.data.remote.SungwooApi;
+import com.sungwoo.aps.mobile.data.remote.SungwooService;
 
 import javax.inject.Inject;
 
@@ -13,10 +13,10 @@ import io.reactivex.Observable;
  */
 
 public class DataRepositoryImpl implements DataRepository {
-    private final SungwooApi sungwooApi;
+    private final SungwooService sungwooApi;
 
     @Inject
-    public DataRepositoryImpl(SungwooApi sungwooApi) {
+    public DataRepositoryImpl(SungwooService sungwooApi) {
         this.sungwooApi = sungwooApi;
     }
 
